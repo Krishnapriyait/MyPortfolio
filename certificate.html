@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+	    left:0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            font-size: 25px;
+            color: #ffcc00;
+	    font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .header-middle {
+            font-size: 30px;
+	    font-weight: bold;
+            color: pink;
+        }
+
+        .header-right {
+            display: flex;
+	    font-size: 15px;
+	    font-weight: bold;
+            gap: 20px;
+        }
+
+        .header-right a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .header-right a:hover {
+            color: #ffcc00;
+        }
+
+        /* Certifications Container */
+        .certifications-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 20px;
+        }
+
+        /* Individual Certification Card */
+        .certification {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: 280px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .certification img {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .certification:hover img {
+            transform: scale(1.05);
+        }
+
+        .certification h3 {
+            color: #fff;
+            margin: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .certification p {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Floating Animation */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .certification {
+            animation: floating 3s infinite ease-in-out;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            width: 50%;
+            margin: 10% auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            animation: slideDown 0.4s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal img {
+            width: 80%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal img:hover {
+            transform: rotate(3deg) scale(1.05);
+        }
+
+        .modal h3 {
+            margin: 15px 0;
+            font-size: 22px;
+        }
+
+        .modal p {
+            font-size: 16px;
+            color: #444;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal .close:hover {
+            transform: scale(1.2);
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">My Portfolio</div>
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="otherindex.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificate.html">Certifications</a>
+        <a href="skill.html">Skills</a>
+        <a href="contacthtml.html">Contact</a>
+    </div>
+</header>
+<br><br><div class="header-middle">What I learned ???📖👩‍🎓 </div>
+<section class="certifications-container">
+    <div class="certification" onclick="openModal('cert1')">
+        <img src="cert1.jpg" alt="Certification 1">
+        <h3>JavaScript Certification</h3>
+        <p>Completed on: Feb 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert2')">
+        <img src="cert2.jpg" alt="Certification 2">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert3')">
+        <img src="cert3.jpg" alt="Certification 3">
+        <h3>AI Internship Certificate</h3>
+        <p>Completed on: Dec 2024</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert4')">
+        <img src="cert4.jpg" alt="Certification 4">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert5')">
+        <img src="cert5.jpg" alt="Certification 5">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+
+    <div class="certification" onclick="openModal('cert6')">
+        <img src="cert6.jpg" alt="Certification 6">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert7')">
+        <img src="cert7.png" alt="Certification 7">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert8')">
+        <img src="cert8.jpg" alt="Certification 8">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+    <div class="certification" onclick="openModal('cert9')">
+        <img src="cert9.jpg" alt="Certification 9">
+        <h3>Data Structures in C</h3>
+        <p>Completed on: Jan 2025</p>
+    </div>
+
+</section>
+
+<!-- Modal Popup -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+<script>
+    const certifications = {
+        cert1: { img: "cert1.jpg", title: "JavaScript Certification", description: "Completed an advanced JavaScript course at SoloLearn." },
+        cert2: { img: "cert2.jpg", title: "Data Structures in C", description: "Completed a Data Structures course using C at Great Learning." },
+        cert4: { img: "cert4.jpg", title: "JavaScript Certification", description: "Completed an advanced JavaScript course at SoloLearn." },
+        cert5: { img: "cert5.jpg", title: "Data Structures in C", description: "Completed a Data Structures course using C at Great Learning." },
+        cert6: { img: "cert6.jpg", title: "JavaScript Certification", description: "Completed an advanced JavaScript course at SoloLearn." },
+        cert7: { img: "cert7.png", title: "Data Structures in C", description: "Completed a Data Structures course using C at Great Learning." },
+        cert8: { img: "cert8.jpg", title: "JavaScript Certification", description: "Completed an advanced JavaScript course at SoloLearn." },
+        cert9: { img: "cert9.jpg", title: "Data Structures in C", description: "Completed a Data Structures course using C at Great Learning." },
+        cert3: { img: "cert3.jpg", title: "AI Internship Certificate", description: "Completed an AI internship at Plasmid." }
+    };
+
+    function openModal(certId) {
+        document.getElementById("modal-img").src = certifications[certId].img;
+        document.getElementById("modal-title").innerText = certifications[certId].title;
+        document.getElementById("modal-description").innerText = certifications[certId].description;
+        document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
+<div style="text-align: center;background: rgba(0, 0, 0, 0.7);">
+    <br>
+    <footer>
+        <p>&copy; 2025 Krishna priya. All Rights Reserved.</p>
+    </footer>
+    <br>
+    </div>
+</body>
+</html>

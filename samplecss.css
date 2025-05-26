@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6D4C41;
+    padding: 15px 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #FFD700;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+.hero {
+    height: 200vh;
+    background: url('background.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+    object-fit: contain;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.profile-picture img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h1 span {
+    color: #FFD700;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#typing-text {
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+}
+.quote-section {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    animation: fadeIn 4s ease-in-out;
+}
+
+/* Animation Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero h1 {
+    font-size: 2.5rem;
+    color: #ffd700;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+/* About Me Section */
+.about {
+    padding: 100px 40px;
+    text-align: center;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+.abouting-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    text-align: left;
+    margin: auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white for contrast */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 4s ease-in-out;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 250px;
+    border-radius: 50%;
+    border: 5px solid #ffcc00;
+    transition: 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Content Styling */
+.about-content {
+    flex: 2;
+    max-width: 600px;
+}
+/* Hire Me Button */
+.hire-me {
+    text-align: center;
+    margin-top: 30px;
+}
+.quote {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ffd700;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    background: #ffae00;
+    transform: scale(1.05);
+}
+#dynamic-role {
+    color: #ffcc00; /* Highlighted text color */
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-right: 3px solid #ffcc00;
+    animation: blinkCursor 0.8s infinite;
+}
+
+/* Blinking Cursor Animation */
+@keyframes blinkCursor {
+    50% { border-color: transparent; }
+}
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

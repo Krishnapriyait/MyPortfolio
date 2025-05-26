@@ -1,0 +1,173 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(270deg, #FFB6C1, #FF69B4, #FF1493);
+  background-size: 300% 300%;
+  animation: gradientMain 4s infinite alternate;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  background: #000;
+  padding: 10px 20px;
+  box-shadow: 0 5px 10px rgba(255, 215, 0, 0.4);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+}
+
+.logo span {
+  color: #fff;
+  text-shadow: 0 0 10px gold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  background: gold;
+  color: black;
+}
+
+h1.glow {
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00;
+  margin: 20px 0;
+}
+.input-container {
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(270deg, #FF1493, #FF69B4, #f78fb3 );
+  background-size: 600% 600%;
+  animation: gradientBG 4s ease infinite;
+  border-radius: 10px;
+}
+
+main {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  background: linear-gradient(270deg, #1e3c72, #2a5298, #4f75c2);
+  animation: glowZoomDark 3s ease-in-out infinite;
+  border-radius: 80px;
+  box-shadow: 0 10 25px rgba(0,0,0,0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 90%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid gold;
+  box-shadow: 0 0 10px gold;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  padding: 14px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: #fff000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fff000;
+}
+
+footer {
+  background: #000;
+  color: gold;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  box-shadow: 0 -3px 10px rgba(255, 215, 0, 0.3);
+}
+
+.conditional {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes glowZoomDark {
+  0%, 100% {
+    box-shadow: 0 0 15px 5px rgba(0, 191, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(0, 191, 255, 0.5);
+    transform: scale(1.03);
+  }
+}
+@keyframes gradientMain {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+

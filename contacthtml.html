@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="contactstyles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">My <span>Portfolio</span></div>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.html">About Me</a></li>
+          <li><a href="../../otherindex.html">Education</a></li>
+          <li><a href="../../experience.html">Experience</a></li>
+          <li><a href="../../projects.html">Projects</a></li>
+          <li><a href="../../certificate.html">Certifications</a></li>
+          <li><a href="../../skill.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="glow">Get In Touch</h1>
+  </header>
+
+  <main>
+    <form id="contactForm" class="animated-form">
+      <div class="input-container">
+        <label>Name:</label>
+        <input type="text" name="name"  required />
+      </div>
+
+      <div class="input-container">
+        <label>Email:</label>
+        <input type="email" name="email" required />
+      </div>
+
+      <div class="input-container">
+        <label>Mobile:</label>
+        <input type="tel" name="mobile" pattern="[0-9]{10}" required />
+      </div>
+
+      <div class="input-container">
+        <label>Status:</label>
+        <select name="status" id="status" required>
+          <option value="">-- Select --</option>
+          <option value="student">Student</option>
+          <option value="employee">Employee</option>
+        </select>
+      </div>
+
+      <div id="collegeField" class="conditional input-container">
+        <label>College Name:</label>
+        <input type="text" name="college" />
+        <label>Location:</label>
+        <input type="text" name="collegeLocation" />
+      </div>
+
+      <div id="companyField" class="conditional input-container">
+        <label>Company Name:</label>
+        <input type="text" name="company" />
+        <label>Location:</label>
+        <input type="text" name="companyLocation" />
+      </div>
+
+      <div class="input-container">
+        <label>Type:</label>
+        <select name="type" required>
+          <option value="general">General</option>
+          <option value="feedback">Feedback</option>
+          <option value="inquiry">Inquiry</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Contact Form | Animated with MongoDB</p>
+  </footer>
+
+  <script src="contactscript.js"></script>
+</body>
+</html>
