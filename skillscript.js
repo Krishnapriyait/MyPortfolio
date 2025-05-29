@@ -18,7 +18,9 @@ let currentIndex = 0;
 const skillsPerRow = 3;
 let viewType = 'bar';
 
-loadNextSkills();
+window.onload = () => {
+  loadNextSkills();
+};
 
 window.addEventListener('scroll', () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
@@ -65,8 +67,11 @@ function loadNextSkills() {
   });
 
   currentIndex += skillsPerRow;
-}
 
+  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 150) {
+    loadNextSkills();
+  }
+}
 function toggleSkillView() {
   skillsContainer.innerHTML = '';
   currentIndex = 0;

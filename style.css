@@ -17,6 +17,29 @@ header {
     left: 0;
     z-index: 1000;
 }
+.form-instructions {
+  background-color: #f0f8ff;
+  border-left: 4px solid #0077cc;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color : black;
+}
+
+.form-instructions h2 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+.form-instructions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.form-instructions ul li:last-child {
+  color: teal;
+}
+
 .logo {
     font-size: 24px;
     font-weight: bold;
