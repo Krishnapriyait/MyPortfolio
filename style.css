@@ -17,6 +17,9 @@ header {
     left: 0;
     z-index: 1000;
 }
+#about {
+  scroll-margin-top: 100px;}
+
 .form-instructions {
   background-color: #f0f8ff;
   border-left: 4px solid #0077cc;
@@ -95,7 +98,8 @@ nav ul li a:hover {
 }
 
 .profile-picture img {
-    width: 300px;
+    width: 100%;
+    max-width : 300px;
     height: 300px;
     border-radius: 50%;
     border: 5px solid white;
@@ -153,12 +157,13 @@ p {
 }
 @keyframes moveColors {
     0% {
-        background-position;100% 0;
+        background-position: 100% 0;
     }
     100% {
-        background-position;0 0;
+        background-position: 0 0;
     }
 }
+
 /* Animation Effect */
 @keyframes fadeIn {
     0% {
@@ -203,7 +208,7 @@ p {
     animation: fadeIn 4s ease-in-out;
 }
 
-/* Profile Picture */
+
 .profile-pic {
     width: 250px;
     border-radius: 50%;
@@ -270,4 +275,87 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* 📱 Mobile View Fix */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .profile-picture img {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+
+  #typing-text {
+    font-size: 1.2rem;
+  }
+
+  .abouting-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+  .about-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+.quote-section {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff8c00, #ff2e63, #ffcc00, #8c52ff);
+    background-size: 400% 400%;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    animation: gradientShift 8s ease infinite;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }

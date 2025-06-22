@@ -1,11 +1,19 @@
 const skills = [
   { name: "HTML", percent: 90 },
   { name: "CSS", percent: 85 },
+  { name: "TailwindCSS", percent: 65 },
   { name: "JavaScript", percent: 80 },
-  { name: "React", percent: 75 },
+  { name: "React.js", percent: 75 },
+  { name: "Node.js", percent: 59 },
+  { name: "Next.js", percent: 95 },
   { name: "Python", percent: 88 },
+  { name: "Leaflet", percent: 60 },
+  { name: "Express.js", percent: 55 },
+  { name: "SQL", percent: 80 },
+  { name: "MongoDB", percent: 70 },
   { name: "C", percent: 82 },
   { name: "Java", percent: 78 },
+  { name: "OOPS", percent: 68 },
   { name: "DSA", percent: 84 },
   { name: "Algorithms", percent: 80 },
   { name: "OS", percent: 76 },
@@ -68,7 +76,7 @@ function loadNextSkills() {
 
   currentIndex += skillsPerRow;
 
-  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 150) {
+  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 300) {
     loadNextSkills();
   }
 }

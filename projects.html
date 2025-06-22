@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Donation Portal - Internship Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+      color: #333;
+      padding-top: 100px;
+      line-height: 1.6;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #6d4c41;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav .logo span {
+      color: gold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: gold;
+    }
+
+    header {
+      background-color: #005792;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .section {
+      background: #ffffffd9;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.01);
+    }
+
+    .section h2 {
+      color: #005792;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      background-color: #dff9fb;
+      padding: 4px 8px;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .btn-link {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #005792;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-link:hover {
+      background-color: #003f66;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #b2ebf2;
+      color: #01579b;
+      border-radius: 5px;
+      padding: 4px 8px;
+      margin: 2px;
+      font-size: 0.85rem;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      overflow: auto;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #444;
+      border-left: 4px solid #005792;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">My <span>Portfolio</span></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About Me</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contacthtml.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>🌟 Food Donation Portal</h1>
+  <p>Internship Project | Coimbatore Institute of Technology x Boredom Technologies LLP</p>
+</header>
+
+<div class="section">
+  <h2>🎯 Problem Statement & Objective</h2>
+  <p>Millions of people struggle with hunger daily, while surplus food is often wasted. This platform bridges that gap by connecting food donors with NGOs and volunteers, enabling timely and safe food redistribution.</p>
+</div>
+
+<div class="section">
+  <h2>📝 Project Overview</h2>
+  <p>The <strong>Food Donation Portal</strong> is a socially impactful web application developed during my internship to connect food donors with NGOs and volunteers in real-time. It enables users to submit donation requests, upload images, and track them on an interactive map.</p>
+</div>
+
+<div class="section">
+  <h2>💻 Technology Stack</h2>
+  <p><span class="highlight">Frontend:</span></p>
+  <ul>
+    <li>Next.js (React Framework)</li>
+    <li>JavaScript, HTML5, CSS3</li>
+    <li>React Hooks: <code>useState</code>, <code>useEffect</code></li>
+  </ul>
+  <p><span class="highlight">Map Integration:</span></p>
+  <ul>
+    <li>Leaflet.js with React-Leaflet</li>
+    <li>Dynamic Markers from Firebase location data</li>
+  </ul>
+  <p><span class="highlight">Backend & Storage:</span></p>
+  <ul>
+    <li>Firebase Firestore (NoSQL DB)</li>
+    <li>Firebase Storage for image uploads</li>
+    <li>Firebase Hosting for deployment</li>
+  </ul>
+  <p><span class="highlight">AI Chatbot:</span></p>
+  <ul>
+    <li>Custom NLP bot to assist users and answer FAQs</li>
+  </ul>
+  <p><span class="highlight">Deployment & Version Control:</span></p>
+  <ul>
+    <li>Vercel (CI/CD and Hosting)</li>
+    <li>Git & GitHub (Version Control)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>📈 Key Features</h2>
+  <ul>
+    <li>Food donation form with real-time validation</li>
+    <li>Live updates of donation submissions</li>
+    <li>Interactive map to visualize and locate donations</li>
+    <li>Mobile responsive and animated interface</li>
+    <li>AI chatbot for basic guidance and support</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>📐 System Architecture</h2>
+  <div style="text-align:center";>
+  <img src="architecture.png" alt="System Architecture Diagram" style="width:70%; border-radius: 10px;" />
+  </div>
+</div>
+
+<div class="section">
+  <h2>🧠 Challenges & Learnings</h2>
+  <ul>
+    <li>Handling real-time data sync using Firebase Firestore</li>
+    <li>Integrating React-Leaflet with dynamically updating markers</li>
+    <li>Responsive UI across mobile and desktop using custom CSS</li>
+    <li>Deploying with CI/CD using Vercel</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>💡 Code Highlight: Dynamic Map Marker</h2>
+  <pre>
+{donations.map(donation => (
+  <Marker position={[donation.lat, donation.lng]} key={donation.id}>
+    <Popup>
+      {donation.foodName} - {donation.quantity} servings
+    </Popup>
+  </Marker>
+))}
+  </pre>
+</div>
+
+<div class="section">
+  <h2>🛠️ Skills & Tools Used</h2>
+  <span class="tag">React.js</span>
+  <span class="tag">Next.js</span>
+  <span class="tag">Firebase</span>
+  <span class="tag">Leaflet.js</span>
+  <span class="tag">JavaScript</span>
+  <span class="tag">HTML5</span>
+  <span class="tag">CSS3</span>
+  <span class="tag">AI Chatbot</span>
+  <span class="tag">Vercel</span>
+  <span class="tag">GitHub</span>
+</div>
+
+<div class="section">
+  <h2>🗣️ Mentor's Feedback</h2>
+  <blockquote>
+    “Krishna's project was a standout. The use of real-time maps and AI chat support shows a strong grasp of modern web technologies.”<br>– Internship Supervisor, Boredom Technologies LLP
+  </blockquote>
+</div>
+
+<div class="section">
+  <h2>🔮 Future Enhancements</h2>
+  <ul>
+    <li>Add geofencing to notify nearby NGOs automatically</li>
+    <li>Enable SMS/WhatsApp notifications using Twilio</li>
+    <li>Improve chatbot with GPT or Dialogflow</li>
+    <li>Admin panel for verification and tracking</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🏆 Internship Details</h2>
+  <ul>
+    <li><strong>Duration:</strong> 4 June 2025 – 17 June 2025</li>
+    <li><strong>Title:</strong> MVP to AI-Powered Apps: For the Modern Web Builders</li>
+    <li><strong>Grade Awarded:</strong> ★ Outstanding</li>
+    <li><strong>Certificate:</strong> <em>Attached in portfolio</em></li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🔗 Links</h2>
+  <p><a class="btn-link" href="https://mvp-intern-nextjs.vercel.app/">🔴 Live Project (Vercel)</a></p>
+  <p><a class="btn-link" href="https://krishnapriyait.github.io/mvp-intern-nextjs/">💻 GitHub Repository</a></p>
+</div>
+
+<div class="section" style="text-align:center;">
+  <a href="resume.pdf" class="btn-link">📄 View My Resume</a>
+  <a href="mailto:krishnapriya.it.tech@gmail.com" class="btn-link">📬 Contact Me</a>
+</div>
+
+<footer>
+  &copy; 2025 Krishna Priya | Food Donation Portal Project Showcase
+</footer>
+
+
+</body>
+</html>
+
+
+
