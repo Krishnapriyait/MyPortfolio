@@ -23,8 +23,11 @@ const skills = [
 
 const skillsContainer = document.getElementById('skills-container');
 let currentIndex = 0;
-const skillsPerRow = 3;
 let viewType = 'bar';
+
+function getSkillsPerLoad() {
+  return window.innerWidth <= 768 ? 1 : 3;
+}
 
 window.onload = () => {
   loadNextSkills();
@@ -37,7 +40,8 @@ window.addEventListener('scroll', () => {
 });
 
 function loadNextSkills() {
-  const nextSkills = skills.slice(currentIndex, currentIndex + skillsPerRow);
+  const skillsPerLoad = getSkillsPerLoad();
+  const nextSkills = skills.slice(currentIndex, currentIndex + skillsPerLoad);
 
   nextSkills.forEach(skill => {
     const card = document.createElement('div');
@@ -74,12 +78,13 @@ function loadNextSkills() {
     }, 100);
   });
 
-  currentIndex += skillsPerRow;
+  currentIndex += skillsPerLoad;
 
-  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 300) {
+  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 200) {
     loadNextSkills();
   }
 }
+
 function toggleSkillView() {
   skillsContainer.innerHTML = '';
   currentIndex = 0;
