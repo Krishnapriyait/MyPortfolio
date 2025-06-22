@@ -24,22 +24,16 @@ const skills = [
 const skillsContainer = document.getElementById('skills-container');
 let currentIndex = 0;
 let viewType = 'bar';
+let isLoading = false;
 
 function getSkillsPerLoad() {
   return window.innerWidth <= 768 ? 1 : 3;
 }
 
-window.onload = () => {
-  loadNextSkills();
-};
-
-window.addEventListener('scroll', () => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
-    loadNextSkills();
-  }
-});
-
 function loadNextSkills() {
+  if (isLoading || currentIndex >= skills.length) return;
+
+  isLoading = true;
   const skillsPerLoad = getSkillsPerLoad();
   const nextSkills = skills.slice(currentIndex, currentIndex + skillsPerLoad);
 
@@ -79,10 +73,7 @@ function loadNextSkills() {
   });
 
   currentIndex += skillsPerLoad;
-
-  if (window.innerWidth <= 768 && document.body.scrollHeight < window.innerHeight + 200) {
-    loadNextSkills();
-  }
+  isLoading = false;
 }
 
 function toggleSkillView() {
@@ -95,3 +86,11 @@ function toggleSkillView() {
 function toggleMode() {
   document.body.classList.toggle('light-mode');
 }
+
+window.onload = loadNextSkills;
+
+window.addEventListener('scroll', () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
+    loadNextSkills();
+  }
+});
