@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +6,103 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .contain {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: white;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    h1 span {
+      font-size: 40px;
+      color: #FFD700;
+      display: inline;
+    }
+
+.quote-section {
+  position: relative;
+  text-align: center;
+  margin: 50px auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: rgba(240, 255, 240, 0.7); /* light greenish */
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 800px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.quote-section::before,
+.quote-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 128, 0, 0.08); /* transparent green bubble */
+  animation: floatBubbles 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+.quote-section::before {
+  width: 100px;
+  height: 100px;
+  bottom: -20px;
+  left: -30px;
+}
+
+.quote-section::after {
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  right: -40px;
+  animation-delay: 3s;
+}
+
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.quote-section blockquote p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d2b2b;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+
+
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">My <span>Portfolio</span></div>
-    <nav>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  <nav id="mobile-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#about">About Me</a></li>
@@ -22,6 +112,7 @@
         <li><a href="certificate.html">Certifications</a></li>
         <li><a href="skill.html">Skills</a></li>
         <li><a href="contacthtml.html">Contact</a></li>
+        <li><a href="contact.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
     </nav>
   </header>
@@ -37,6 +128,7 @@
       </div>
       <p><span id="typing-text"></span></p>
 
+      <!-- 🎯 Updated quote section -->
       <section class="quote-section">
         <blockquote>
           <p>"Code is like poetry; every line tells a story of innovation."</p>
@@ -47,6 +139,7 @@
 
   <script src="script.js"></script>
 
+  <!-- About Me Section -->
   <section id="about" class="about">
     <div class="abouting-container">
       <img src="mypic.jpg" alt="Profile Picture" class="profile-pic" />
