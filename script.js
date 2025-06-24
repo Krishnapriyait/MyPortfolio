@@ -37,11 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Start animation after 1 second
   setTimeout(type, 1000);
 });
 
-// Smooth scroll for About Me link
+// Smooth scroll to About
 document.addEventListener("DOMContentLoaded", () => {
   const aboutLink = document.querySelector("a[href='#about']");
   if (aboutLink) {
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Mobile hamburger toggle
+// Hamburger toggle with animation
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("menu-toggle");
   const nav = document.getElementById("mobile-nav");
