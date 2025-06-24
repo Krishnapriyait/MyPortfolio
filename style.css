@@ -51,7 +51,7 @@ nav ul li a:hover {
 }
 
 .hero {
-  height: 200vh;
+  height: 100vh;
   background: url('background.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,6 @@ nav ul li a:hover {
   text-align: center;
   position: relative;
   margin-top: 70px;
-  object-fit: contain;
 }
 
 .hero::before {
@@ -78,23 +77,27 @@ nav ul li a:hover {
   color: white;
 }
 
-.profile-picture img {
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 5px solid white;
-  margin-bottom: 20px;
-  object-fit: cover;
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
-p {
-  font-size: 20px;
-  font-weight: bold;
+h2 {
+  font-size: 40px;
+  color: white;
+  margin: 0;
 }
 
-.no-bold {
-  font-weight: normal;
+h1 {
+  margin: 0;
+}
+
+h1 span {
+  font-size: 40px;
+  color: #FFD700;
+  display: inline;
 }
 
 #typing-text {
@@ -105,18 +108,6 @@ p {
   font-size: 24px;
   font-weight: bold;
   color: #FFD700;
-}
-
-.quote {
-  font-size: 1.2rem;
-  color: white;
-  margin-top: 20px;
-}
-
-.quoteabout {
-  font-size: 1.2rem;
-  color: pink;
-  margin-top: 20px;
 }
 
 .quote-section {
@@ -162,15 +153,9 @@ p {
 }
 
 @keyframes floatBubbles {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-30px) scale(1.1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
 }
 
 .quote-section blockquote p {
@@ -181,6 +166,16 @@ p {
   position: relative;
   z-index: 1;
   text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.profile-picture img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .about {
@@ -202,30 +197,19 @@ p {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-  animation: fadeIn 4s ease-in-out;
 }
 
 .profile-pic {
   width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 340px;
+  border-radius: 50% / 40%;
   border: 5px solid #ffcc00;
-  transition: 0.3s;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
+  object-fit: cover;
 }
 
 .about-content {
   flex: 2;
   max-width: 600px;
-}
-
-.hire-me {
-  text-align: center;
-  margin-top: 30px;
 }
 
 .btn {
@@ -246,128 +230,56 @@ p {
   transform: scale(1.05);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.quoteabout {
+  font-size: 1.2rem;
+  color: pink;
+  margin-top: 20px;
 }
 
 .menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   color: white;
   z-index: 1001;
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle.active {
-  transform: rotate(90deg);
 }
 
 /* ✅ Mobile View Fixes */
 @media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
   .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 18px;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-    background: #6D4C41;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 1000;
-  }
-
-  nav.show {
     display: block;
   }
 
   nav ul {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0;
+    background-color: #6D4C41;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    display: none;
   }
 
   nav ul li {
+    margin: 10px 0;
+  }
+
+  #mobile-nav.show ul {
     display: block;
-  }
-
-  .hero {
-    height: 100vh;
-    padding: 40px 20px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .profile-picture img {
-    width: 200px;
-    height: 200px;
-    margin-top: 80px;
-  }
-
-  h1, h2 {
-    font-size: 1.8rem;
-  }
-
-  #typing-text {
-    font-size: 1.2rem;
   }
 
   .abouting-container {
     flex-direction: column;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
   }
 
   .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 280px;
+    border-radius: 50% / 40%;
     margin-bottom: 20px;
   }
-
-  .about-content {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  .quote-section {
-    font-size: 1rem;
-    padding: 12px 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 350px;
-    margin: 30px auto;
-  }
-
-  .quote-section::before,
-  .quote-section::after {
-    display: none;
-  }
-  }
+                                }
