@@ -1,61 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scroll to About section
-    const aboutLink = document.querySelector("a[href='#about']");
-    if (aboutLink) {
-        aboutLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
-        });
+  // Typing Effect
+  const roles = ["Web Developer", "Software Engineer", "Frontend Developer", "Tech Enthusiast", "Backend Developer", "Problem Solver"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  const typingText = document.getElementById("typing-text");
+
+  function type() {
+    if (charIndex < roles[roleIndex].length) {
+      typingText.innerHTML += roles[roleIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 1500);
     }
+  }
 
-    // Typing animation
-    const roles = [
-        "Web Developer",
-        "Software Engineer",
-        "Frontend Developer",
-        "Tech Enthusiast",
-        "Backend Developer",
-        "Problem Solver"
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const delayBetweenWords = 1500;
-    const dynamicText = document.getElementById("dynamic-role");
-
-    function typeEffect() {
-        if (charIndex < roles[roleIndex].length) {
-            dynamicText.textContent += roles[roleIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(typeEffect, typingSpeed);
-        } else {
-            setTimeout(deleteEffect, delayBetweenWords);
-        }
+  function erase() {
+    if (charIndex > 0) {
+      typingText.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(type, 500);
     }
+  }
 
-    function deleteEffect() {
-        if (charIndex > 0) {
-            dynamicText.textContent = roles[roleIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(deleteEffect, deletingSpeed);
-        } else {
-            roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(typeEffect, typingSpeed);
-        }
-    }
+  type();
 
-    if (dynamicText) {
-        setTimeout(typeEffect, 1000);
-    }
+  // Smooth Scroll
+  document.querySelector("a[href='#about']").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+  });
 
-    // Hamburger menu toggle
-    const toggleBtn = document.getElementById("menu-toggle");
-    const nav = document.querySelector("nav");
+  // Toggle Mobile Nav
+  const toggleBtn = document.getElementById("menu-toggle");
+  const mobileNav = document.getElementById("mobile-nav");
 
-    if (toggleBtn && nav) {
-        toggleBtn.addEventListener("click", () => {
-            nav.classList.toggle("show");
-        });
-    }
+  toggleBtn.addEventListener("click", () => {
+    mobileNav.classList.toggle("show");
+  });
 });

@@ -6,103 +6,14 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    .contain {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-    }
-
-    h2 {
-      font-size: 40px;
-      color: white;
-      margin: 0;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    h1 span {
-      font-size: 40px;
-      color: #FFD700;
-      display: inline;
-    }
-
-.quote-section {
-  position: relative;
-  text-align: center;
-  margin: 50px auto;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c3e50;
-  background: rgba(240, 255, 240, 0.7); /* light greenish */
-  padding: 30px 40px;
-  border-radius: 20px;
-  width: 80%;
-  max-width: 800px;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-.quote-section::before,
-.quote-section::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 128, 0, 0.08); /* transparent green bubble */
-  animation: floatBubbles 10s infinite ease-in-out;
-  z-index: 0;
-}
-
-.quote-section::before {
-  width: 100px;
-  height: 100px;
-  bottom: -20px;
-  left: -30px;
-}
-
-.quote-section::after {
-  width: 120px;
-  height: 120px;
-  top: -30px;
-  right: -40px;
-  animation-delay: 3s;
-}
-
-@keyframes floatBubbles {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-30px) scale(1.1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-
-.quote-section blockquote p {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1d2b2b;
-  position: relative;
-  z-index: 1;
-  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6);
-}
-
-
-
-  </style>
 </head>
 <body>
   <header>
     <div class="logo">My <span>Portfolio</span></div>
-    <button id="menu-toggle" class="menu-toggle">☰</button>
-  <nav id="mobile-nav">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="desktop-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#about">About Me</a></li>
@@ -112,10 +23,22 @@
         <li><a href="certificate.html">Certifications</a></li>
         <li><a href="skill.html">Skills</a></li>
         <li><a href="contacthtml.html">Contact</a></li>
-        <li><a href="contact.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
     </nav>
   </header>
+
+  <div class="mobile-nav-links" id="mobile-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="otherindex.html">Education</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certificate.html">Certifications</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="contacthtml.html">Contact</a></li>
+    </ul>
+  </div>
 
   <section class="hero">
     <div class="hero-content">
@@ -128,7 +51,6 @@
       </div>
       <p><span id="typing-text"></span></p>
 
-      <!-- 🎯 Updated quote section -->
       <section class="quote-section">
         <blockquote>
           <p>"Code is like poetry; every line tells a story of innovation."</p>
@@ -137,32 +59,13 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
-
-  <!-- About Me Section -->
   <section id="about" class="about">
     <div class="abouting-container">
       <img src="mypic.jpg" alt="Profile Picture" class="profile-pic" />
       <div class="about-content">
         <h1><span>About Me</span></h1>
-        <p class="no-bold">
-          I am currently pursuing a degree in Information Technology at Coimbatore Institute of Technology (CIT).  
-          With a deep passion for software engineering, web development, and programming language, I constantly strive to learn  
-          and apply new technologies to build efficient, scalable, and user-friendly applications.
-        </p>
-        <p class="no-bold">
-          During my academic journey, I completed a 2-month internship at Plasmid in Artificial Intelligence.  
-          Additionally, I completed a Data Structures course using C at Great Learning  
-          and secured an internship at Codsoft in Java Programming to further my exposure.
-        </p>
-        <p class="no-bold">
-          I have actively enhanced my skills through Business Analysis and Process Management on Coursera, React.js on Udemy and developed projects like the  
-          Food Donation Portal System — a responsive, real-time platform to reduce hunger.  
-          My ambition is to contribute to innovative tech solutions, continuously expand my expertise, and grow as a future software engineer.
-        </p>
-        <p class="quoteabout">
-          The best way to predict the future is to create it.
-        </p>
+        <p class="no-bold">I am currently pursuing a degree in Information Technology at Coimbatore Institute of Technology (CIT)...</p>
+        <p class="quoteabout">The best way to predict the future is to create it.</p>
         <div class="hire-me">
           <a href="contacthtml.html" class="btn">Hire Me</a>
         </div>
@@ -177,5 +80,7 @@
     </footer>
     <br />
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

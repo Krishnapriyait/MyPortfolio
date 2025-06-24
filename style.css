@@ -1,175 +1,115 @@
-/* Base Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #6D4C41;
-    padding: 15px 50px;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6D4C41;
+  padding: 15px 50px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
-
 .logo span {
-    color: #FFD700;
-}
-
-/* Navigation */
-nav {
-    display: flex;
-    align-items: center;
+  color: #FFD700;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
-
+nav ul li {
+  display: inline;
+}
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
 }
-
 nav ul li a:hover {
-    color: #FFD700;
+  color: #FFD700;
 }
 
-/* Hamburger Icon */
 .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    z-index: 1001;
-    background: none;
-    border: none;
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: url('background.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    margin-top: 70px;
+.mobile-nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 320px;
+  width: 100%;
+  background-color: #6D4C41;
+  z-index: 999;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+.mobile-nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.mobile-nav-links ul li {
+  border-bottom: 1px solid #FFD700;
+}
+.mobile-nav-links ul li a {
+  display: block;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+.mobile-nav-links ul li a:hover {
+  background-color: #FFD700;
+  color: black;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    color: #FFD700;
-    position: relative;
-    z-index: 1;
+.mobile-nav-links.show {
+  display: flex;
 }
 
-.hero p {
-    font-size: 1.3rem;
-    margin: 15px 0;
-    color: white;
-    position: relative;
-    z-index: 1;
-}
-
-.profile-picture img {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 5px solid white;
-    margin-bottom: 20px;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-}
-
-/* About Section */
-.about {
-    padding: 100px 40px;
-    text-align: center;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
-}
-
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        max-width: 300px;
-        background-color: #6D4C41;
-        height: 0;
-        overflow: hidden;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: height 0.3s ease-in-out;
-    }
-
-    nav.show {
-        height: auto;
-        padding: 15px 20px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    nav ul li a {
-        font-size: 18px;
-        color: white;
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px solid #ffffff33;
-    }
-
-    .profile-picture img {
-        width: 200px;
-        height: 200px;
-        margin-top: 20px;
-    }
+  .menu-toggle {
+    display: block;
+  }
+  #desktop-nav {
+    display: none;
+  }
+  .hero {
+    padding: 40px 20px;
+  }
+  .profile-picture img {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+  }
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+  #typing-text {
+    font-size: 1.2rem;
+  }
 }
