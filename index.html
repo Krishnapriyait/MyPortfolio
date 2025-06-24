@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -10,9 +10,10 @@
 <body>
   <header>
     <div class="logo">My <span>Portfolio</span></div>
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </div>
+    <!-- ✅ Hamburger Menu Button for Mobile -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    
+    <!-- ✅ Mobile-Responsive Nav with ID -->
     <nav id="mobile-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -23,6 +24,7 @@
         <li><a href="certificate.html">Certifications</a></li>
         <li><a href="skill.html">Skills</a></li>
         <li><a href="contacthtml.html">Contact</a></li>
+        <li><a href="contact.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
     </nav>
   </header>
@@ -38,6 +40,7 @@
       </div>
       <p><span id="typing-text"></span></p>
 
+      <!-- ✅ Green Bubbly Quote -->
       <section class="quote-section">
         <blockquote>
           <p>"Code is like poetry; every line tells a story of innovation."</p>
@@ -46,6 +49,7 @@
     </div>
   </section>
 
+  <!-- ✅ About Me Section -->
   <section id="about" class="about">
     <div class="abouting-container">
       <img src="mypic.jpg" alt="Profile Picture" class="profile-pic" />
@@ -76,6 +80,7 @@
     </div>
   </section>
 
+  <!-- ✅ Footer -->
   <div style="text-align: center; background: #6D4C41;">
     <br />
     <footer>
@@ -84,6 +89,7 @@
     <br />
   </div>
 
+  <!-- ✅ JS Script -->
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
