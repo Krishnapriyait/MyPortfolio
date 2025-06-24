@@ -1,16 +1,46 @@
-// Typing Animation const roles = [ "Web Developer", "Software Engineer", "Frontend Developer", "Tech Enthusiast", "Backend Developer", "Problem Solver" ]; let roleIndex = 0; let charIndex = 0; const typingText = document.getElementById("typing-text");
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(type, 1000);
 
-function type() { if (charIndex < roles[roleIndex].length) { typingText.innerHTML += roles[roleIndex].charAt(charIndex); charIndex++; setTimeout(type, 100); } else { setTimeout(erase, 1500); } }
+  // Smooth scroll to About section
+  const aboutLink = document.querySelector("a[href='#about']");
+  if (aboutLink) {
+    aboutLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      const aboutSection = document.getElementById("about");
+      aboutSection.scrollIntoView({ behavior: "smooth" });
 
-function erase() { if (charIndex > 0) { typingText.innerHTML = roles[roleIndex].substring(0, charIndex - 1); charIndex--; setTimeout(erase, 50); } else { roleIndex = (roleIndex + 1) % roles.length; setTimeout(type, 500); } }
+      // Trigger animation class
+      aboutSection.classList.add("reveal");
+    });
+  }
 
-document.addEventListener("DOMContentLoaded", () => { setTimeout(type, 1000);
+  // Hamburger menu toggle
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("mobile-nav-links");
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  }
 
-// Smooth Scroll to About Section const aboutLink = document.querySelector("a[href='#about']"); if (aboutLink) { aboutLink.addEventListener("click", function (event) { event.preventDefault(); document.getElementById("about").scrollIntoView({ behavior: "smooth" }); }); }
+  // Animate menu links
+  const menuLinks = document.querySelectorAll("#mobile-nav-links a");
+  menuLinks.forEach((link, index) => {
+    link.style.animation = `fadeInLink 0.5s ease forwards ${index / 10 + 0.3}s`;
+  });
 
-// Hamburger Toggle const toggleBtn = document.getElementById("menu-toggle"); const nav = document.querySelector("nav");
+  // Animate About Me section when scrolled into view (backup)
+  const aboutSection = document.getElementById("about");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        aboutSection.classList.add("reveal");
+        observer.disconnect(); // only animate once
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
 
-if (toggleBtn && nav) { toggleBtn.addEventListener("click", () => { nav.classList.toggle("show"); }); }
-
-// Animate fade-in sections const fadeInElements = document.querySelectorAll(".fade-in"); fadeInElements.forEach((el, index) => { el.style.animationDelay = ${index * 0.3}s; el.classList.add("fade-in"); }); });
-
+  observer.observe(aboutSection);
+});
