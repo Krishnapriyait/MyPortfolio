@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Typing Effect
-  const roles = ["Web Developer", "Software Engineer", "Frontend Developer", "Tech Enthusiast", "Backend Developer", "Problem Solver"];
+  // Smooth Scroll to About Section
+  const aboutLink = document.querySelector("a[href='#about']");
+  if (aboutLink) {
+    aboutLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // Typing Animation
+  const roles = [
+    "Web Developer",
+    "Software Engineer",
+    "Frontend Developer",
+    "Tech Enthusiast",
+    "Backend Developer",
+    "Problem Solver"
+  ];
   let roleIndex = 0;
   let charIndex = 0;
   const typingText = document.getElementById("typing-text");
@@ -26,19 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  type();
+  type(); // start typing effect
 
-  // Smooth Scroll
-  document.querySelector("a[href='#about']").addEventListener("click", function (event) {
-    event.preventDefault();
-    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
-  });
-
-  // Toggle Mobile Nav
+  // Mobile Menu Toggle
   const toggleBtn = document.getElementById("menu-toggle");
-  const mobileNav = document.getElementById("mobile-nav");
+  const nav = document.getElementById("mobile-nav");
 
-  toggleBtn.addEventListener("click", () => {
-    mobileNav.classList.toggle("show");
-  });
+  if (toggleBtn && nav) {
+    toggleBtn.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
 });
