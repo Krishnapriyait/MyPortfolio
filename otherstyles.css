@@ -1,76 +1,214 @@
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 1101;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 30px;
-  background: gold;
-  transition: all 0.4s ease-in-out;
-  display: block;
-}
-
-/* X animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Mobile Nav Styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    right: 30px;
-    top: 25px;
-  }
-
-  nav {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    padding-top: 100px;
-    transition: right 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    z-index: 1100;
-  }
-
-  nav.active {
-    right: 0;
-    opacity: 1;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 25px;
-    text-align: right;
-    padding-right: 30px;
-  }
-
-  nav ul li a {
-    font-size: 20px;
-    color: gold;
-    display: block;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  nav ul li a:hover {
-    transform: translateX(-10px);
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #2E0854, #DA70D6, #BA55D3, #9932CC, #8A2BE2, #4B0082, #2E0854);
+    background-size: 300% 300%;
+    animation: backgroundAnimation 6s infinite alternate;
     color: white;
-  }
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated Colorful Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    background-size: 300% 300%;
+    animation: headerAnimation 6s infinite alternate ease-in-out;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Header Background Animation */
+@keyframes headerAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Text Animation */
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(90deg, cyan, magenta, yellow, red);
+    background-size: 300% 300%;
+    animation: textColorAnimation 4s infinite alternate ease-in-out;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes textColorAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    flex-wrap: nowrap;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: gold;
+}
+@keyframes textResize {
+    0% { font-size: 40px; }
+    50% { font-size: 20px; }
+    100% { font-size: 40px; }
+}
+h1{
+	animation: textResize 2s infinite alternate ease-in-out;
+}
+#education {
+    margin-top: 100px;
+    padding: 50px;
+    position: relative;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+.education-container::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@keyframes textforcard {
+    0% { font-size: 17px; }
+    50% { font-size: 15px; }
+    100% { font-size: 17px; }
+}
+.education-card {
+    background: #1A1A1A;
+    padding: 55px;
+    color: white;
+    animation: textforcard 2s infinite alternate ease-in-out;
+    margin: 20px 0;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.education-card:nth-child(odd) {
+    left: -35%; /* Left side */
+    text-align: right;
+}
+
+.education-card:nth-child(even) {
+    left: 35%; /* Right side */
+    text-align: left;
+}
+
+/* Indicator Dots */
+.education-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background: gold;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* Position Indicators Left & Right */
+.education-card:nth-child(odd)::before {
+    right: -15px;
+}
+
+.education-card:nth-child(even)::before {
+    left: -15px;
+}
+.education-card.visible {
+    opacity: 2;
+    transform: translateY(0);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Buttons */
+.floating-links {
+    position: relative;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    animation: floatingLinks 3s infinite alternate ease-in-out;
+}
+
+@keyframes floatingLinks {
+    0% { transform: translateX(-50%)
+translateY(0); }
+    50% { transform: translateX(-50%)
+translateY(-5px) rotate(2deg); }
+    100% { transform: translateX(-50%)
+translateY(-10px) rotate(-2deg); }
+}
+
+.link-btn {
+    background: gold;
+    color: black;
+    padding: 20px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    box-shadow: 0 10px 20px orange;
+}
+
+.link-btn:hover {
+    background: orange;
+    transform: scale(1.2);
+    box-shadow: 0 12px 25px rgna(255,165,0,0.6);
 }

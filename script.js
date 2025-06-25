@@ -43,14 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   type(); // start typing effect
-
-  // Mobile Menu Toggle
-  const toggleBtn = document.getElementById("menu-toggle");
-  const nav = document.getElementById("mobile-nav");
-
-  if (toggleBtn && nav) {
-    toggleBtn.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
-  }
 });
