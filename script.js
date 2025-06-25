@@ -1,46 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(type, 1000);
-
-  // Smooth scroll to About section
+  // Smooth Scroll to About Section
   const aboutLink = document.querySelector("a[href='#about']");
   if (aboutLink) {
     aboutLink.addEventListener("click", function (event) {
       event.preventDefault();
-      const aboutSection = document.getElementById("about");
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-
-      // Trigger animation class
-      aboutSection.classList.add("reveal");
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
     });
   }
 
-  // Hamburger menu toggle
+  // Typing Animation
+  const roles = [
+    "Web Developer",
+    "Software Engineer",
+    "Frontend Developer",
+    "Tech Enthusiast",
+    "Backend Developer",
+    "Problem Solver"
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  const typingText = document.getElementById("typing-text");
+
+  function type() {
+    if (charIndex < roles[roleIndex].length) {
+      typingText.innerHTML += roles[roleIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 1500);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typingText.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  type(); // start typing effect
+
+  // Mobile Menu Toggle
   const toggleBtn = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("mobile-nav-links");
-  if (toggleBtn && navMenu) {
+  const nav = document.getElementById("mobile-nav");
+
+  if (toggleBtn && nav) {
     toggleBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
+      nav.classList.toggle("show");
     });
   }
-
-  // Animate menu links
-  const menuLinks = document.querySelectorAll("#mobile-nav-links a");
-  menuLinks.forEach((link, index) => {
-    link.style.animation = `fadeInLink 0.5s ease forwards ${index / 10 + 0.3}s`;
-  });
-
-  // Animate About Me section when scrolled into view (backup)
-  const aboutSection = document.getElementById("about");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        aboutSection.classList.add("reveal");
-        observer.disconnect(); // only animate once
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  observer.observe(aboutSection);
 });
