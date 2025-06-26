@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="certscript.js"></script>
     <title>Certifications</title>
     <style>
         /* General Styling */
@@ -22,7 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 30px 50px;
             font-size: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: sticky;
@@ -58,8 +59,109 @@
         }
 
         .header-right a:hover {
-            color: #ffcc00;
+            color: black;
         }
+	.hamburger {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 3001;
+}
+header h3 {
+  position : fixed;
+  right: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(90deg, cyan, magenta, yellow, red);
+  background-size : 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space : nowrap;
+}
+.bar {
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .bar2 {
+  opacity: 0;
+}
+.hamburger.active .bar3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+  position: fixed;
+  top: 50px; /* stays below header */
+  right: -30%;
+  width: 15%;
+  height: 25vh;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: -2px 0 10px rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  opacity:0;
+  transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  display:flex;
+  padding: 20px 10px;
+  overflow-y: auto;
+}
+
+nav.active {
+  top:100px;
+  right: 10px;
+  opacity: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: start;
+}
+nav ul li {
+  margin-bottom: 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  display: flex;
+  width : 100%
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a i {
+  margin-right: 8px; /* Space between icons and text */
+}
+nav ul li a:hover {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transform: translateX(5px); /* Small animation on hover */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 
         /* Certifications Container */
         .certifications-container {
@@ -196,15 +298,27 @@
 
 <header>
     <div class="header-left">My Portfolio</div>
+    <h3>Menu</h3>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
     <div class="header-right">
-        <a href="index.html">Home</a>
-        <a href="index.html">About Me</a>
-        <a href="otherindex.html">Education</a>
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="certificate.html">Certifications</a>
-        <a href="skill.html">Skills</a>
-        <a href="contacthtml.html">Contact</a>
+        <nav id="navMenu">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#about"><i class="fas fa-user"></i> About me</a></li>
+        <li><a href="otherindex.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="projects.html"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="certificate.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+        <li><a href="skill.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+        <li><a href="contacthtml.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+
     </div>
 </header>
 <br><br><div class="header-middle">What I learned ???📖👩‍🎓 </div>

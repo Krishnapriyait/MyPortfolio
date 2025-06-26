@@ -22,10 +22,23 @@ const skills = [
 ];
 
 const skillsContainer = document.getElementById('skills-container');
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
 let currentIndex = 0;
 let viewType = 'bar';
 let isLoading = false;
+  hamburger.addEventListener("click", () => {
+   hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
 
+  // Auto-close menu when link is clicked
+  document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
 function getSkillsPerLoad() {
   return window.innerWidth <= 768 ? 1 : 3;
 }

@@ -28,7 +28,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #1e3c72, #2a5298);;
-  padding: 20px 40px;
+  padding: 8px 10px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -43,16 +43,106 @@ header h1 .gold {
   font-weight: bold;
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
+.hamburger {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 45px;
+  right: 40px;
+  z-index: 3001;
+}
+header h3 {
+  position : fixed;
+  right: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(90deg, cyan, magenta, yellow, red);
+  background-size : 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space : nowrap;
+}
+.secbar {
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
 }
 
-body.light-mode nav a {
-  color: #fff;
-  font-weight: bold;
+.hamburger.active .secbar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .secbar2 {
+  opacity: 0;
+}
+.hamburger.active .secbar3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+  position: fixed;
+  top: 50px; /* stays below header */
+  right: -30%;
+  width: 15%;
+  height: 25vh;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: -2px 0 10px rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  opacity:0;
+  transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  display:flex;
+  padding: 20px 10px;
+  overflow-y: auto;
+}
+
+nav.active {
+  top:100px;
+  right: 10px;
+  opacity: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: start;
+}
+nav ul li {
+  margin-bottom: 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  display: flex;
+  width : 100%
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a i {
+  margin-right: 8px; /* Space between icons and text */
+}
+nav ul li a:hover {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transform: translateX(5px); /* Small animation on hover */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .underline-header,

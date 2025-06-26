@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const statusSelect = document.getElementById("status");
   const collegeField = document.getElementById("collegeField");
   const companyField = document.getElementById("companyField");
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
 
   statusSelect.addEventListener("change", () => {
     if (statusSelect.value === "student") {
@@ -14,6 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
       companyField.style.display = "none";
       collegeField.style.display = "none";
     }
+  });
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Auto-close menu when link is clicked
+  document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
   });
 });
 document.getElementById("contactForm").addEventListener("submit", async function (e) {

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Food Donation Portal - Internship Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects Showcase</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -12,7 +12,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #f8f9fa, #e0f7fa);
@@ -21,13 +20,11 @@
       line-height: 1.6;
       animation: fadeIn 1.5s ease-in;
     }
-
-    /* Simplified Navbar (Only Logo & Menu Text) */
     nav.main-nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #6d4c41;
+      background-color:teal;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
@@ -35,8 +32,7 @@
       color: white;
       z-index: 1000;
     }
-
-    nav.main-nav .logo {
+nav.main-nav .logo {
       font-size: 1.5rem;
       font-weight: bold;
     }
@@ -44,7 +40,6 @@
     nav.main-nav .logo span {
       color: gold;
     }
-
     .hamburger {
       width: 30px;
       height: 20px;
@@ -78,7 +73,7 @@
 
     #navMenu {
       position: fixed;
-  top: 50px; /* stays below header */
+  top: 50px;
   right: -30%;
   width: 15%;
   height: 25vh;
@@ -131,9 +126,8 @@
       border-radius: 5px;
       transform: translateX(5px);
     }
-
     header {
-      background-color: #005792;
+      background-color: lightblue;
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -146,8 +140,7 @@
       font-size: 2rem;
       margin-bottom: 5px;
     }
-
-    .section {
+     .section {
       background: #ffffffd9;
       border-radius: 12px;
       padding: 25px;
@@ -164,7 +157,6 @@
       color: #005792;
       margin-bottom: 10px;
     }
-
     .highlight {
       background-color: #dff9fb;
       padding: 4px 8px;
@@ -200,11 +192,12 @@
 
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 80px;
+      padding:20px;
       font-size: 0.9rem;
       color: #666;
+      background: lightblue;
     }
-
     pre {
       background: #f1f1f1;
       padding: 15px;
@@ -219,6 +212,75 @@
       padding-left: 10px;
     }
 
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: blue;
+    }
+    .internship-container {
+      max-width: 1500px;
+      margin: auto;
+    }
+    .internship-card {
+      position: relative;
+      width: 90%;
+      height: 200px;
+      margin: 20px auto;
+      max-width: 1007:17 PM 26-06-202507:18 PM 26-06-202500px;
+      overflow: hidden;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .internship-card:hover {
+      transform: scale(1.02);
+    }
+    .blur-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(15px) brightness(0.6);
+    }
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px black;
+      z-index: 1;
+    }
+    .project-detail {
+      display: none;
+      background: #ffffffd9;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .sub-projects {
+      display: none;
+      margin: 10px auto;
+      text-align: center;
+    }
+    .sub-project-card {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 1px solid #005792;
+      background: #e0f7fa;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .sub-project-card:hover {
+      background: #b2ebf2;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
@@ -226,18 +288,14 @@
   </style>
 </head>
 <body>
-
   <nav class="main-nav">
     <div class="logo">My <span>Portfolio</span></div>
-   </nav>  
- 
-  <div class="hamburger" id="hamburger">
+   </nav> 
+   <div class="hamburger" id="hamburger">
     <div class="bar bar1"></div>
     <div class="bar bar2"></div>
     <div class="bar bar3"></div>
   </div>
-
-
   <nav id="navMenu">
     <ul>
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -250,12 +308,16 @@
       <li><a href="contacthtml.html"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </nav>
-
-  <header>
-    <h1>🌟 Food Donation Portal</h1>
-    <p>Internship Project | Coimbatore Institute of Technology x Boredom Technologies LLP</p>
-  </header>
-  <div class="section">
+  <h1>My Internship Projects</h1>
+  <div class="internship-container">
+    <div class="internship-card" onclick="showProject('boredom-tech')">
+      <img src="boredom.jpg" class="blur-img" alt="Boredom Technologies"/>
+      <div class="overlay-text">Boredom Technologies LLP</div>
+    </div>
+    <div class="project-detail" id="boredom-tech">
+      <h2>🌟 Food Donation Portal</h2>
+      <p>Internship Project | Coimbatore Institute of Technology x Boredom Technologies LLP</p>
+      <div class="section">
   <h2>🎯 Problem Statement & Objective</h2>
   <p>Millions of people struggle with hunger daily, while surplus food is often wasted. This platform bridges that gap by connecting food donors with NGOs and volunteers, enabling timely and safe food redistribution.</p>
 </div>
@@ -389,17 +451,55 @@
 </div>
 
 <div class="section" style="text-align:center;">
-  <a href="resume.pdf" class="btn-link">📄 View My Resume</a>
+  <a href="myresume.pdf" class="btn-link">📄 View My Resume</a>
   <a href="mailto:krishnapriya.it.tech@gmail.com" class="btn-link">📬 Contact Me</a>
 </div>
+    </div>
+    
+    <div class="internship-card" onclick="toggleSubProjects('plasmid-projects')">
+      <img src="plasmid.jpg" class="blur-img" alt="Plasmid Internship"/>
+      <div class="overlay-text">Plasmid Internship</div>
+    </div>
+    <div class="project-detail" id="plasmid">
+      <h2>Artificial Intelligence Project</h2>
+      <p>This is a sample detailed section for the Frontend project.</p>
+    </div>
+  </div>    
+    <div class="internship-card" onclick="toggleSubProjects('codsoft-projects')">
+      <img src="codsoft.jpg" class="blur-img" alt="Codsoft Internship"/>
+      <div class="overlay-text">Codsoft Internship</div>
+    </div>
+    <div class="sub-projects" id="codsoft-projects">
+      <div class="sub-project-card" onclick="showProject('codsoft-java')">Java Quiz Application</div>
+      <div class="sub-project-card" onclick="showProject('codsoft-java')">Guess the number game</div>
+      <div class="sub-project-card" onclick="showProject('codsoft-java')">Average and grade finding</div>
+    </div>
+    <div class="project-detail" id="codsoft-java">
+      <h2>💻 Codsoft Java Project</h2>
+      <p>This is a sample detailed section for the Java project.</p>
+    </div>
+    <div class="project-detail" id="codsoft-web">
+      <h2>💻 Codsoft Web Development Project</h2>
+      <p>This is a sample detailed section for the Web Dev project.</p>
+    </div>
 
-  
-
-  <footer>
-    &copy; 2025 Krishna Priya | Food Donation Portal Project Showcase
+    <div class="internship-card" onclick="toggleSubProjects('codealpha-projects')">
+      <img src="codealpha.jpg" class="blur-img" alt="CodeAlpha Internship"/>
+      <div class="overlay-text">CodeAlpha Internship</div>
+    </div>
+    <div class="sub-projects" id="codealpha-projects">
+      <div class="sub-project-card" onclick="showProject('codealpha-frontend')">Music Player</div>
+      <div class="sub-project-card" onclick="showProject('codealpha-frontend')">Simple Gallery</div>
+      <div class="sub-project-card" onclick="showProject('codealpha-frontend')">Simple Calculator</div>
+    </div>
+    <div class="project-detail" id="codealpha-frontend">
+      <h2>💻 CodeAlpha Frontend Project</h2>
+      <p>This is a sample detailed section for the Frontend project.</p>
+    </div>
+  </div>
+    <footer>
+    &copy; 2025 Krishna Priya |  Project Showcase
   </footer>
-
-  <!-- Hamburger Toggle Script -->
   <script>
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("navMenu");
@@ -415,7 +515,14 @@
         hamburger.classList.remove("active");
       });
     });
+    function showProject(id) {
+      document.querySelectorAll(".project-detail").forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+    function toggleSubProjects(id) {
+      const section = document.getElementById(id);
+      section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+    }
   </script>
-
 </body>
 </html>
