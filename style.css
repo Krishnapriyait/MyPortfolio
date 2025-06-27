@@ -64,7 +64,7 @@ header h3 {
 
 nav {
   position: fixed;
-  top: 50px; /* stays below header */
+  top: 50px; 
   right: -30%;
   width: 25%;
   height: 25vh;
@@ -112,14 +112,14 @@ nav ul li a {
   transition: background 0.3s, color 0.3s;
 }
 nav ul li a i {
-  margin-right: 8px; /* Space between icons and text */
+  margin-right: 8px; 
 }
 nav ul li a:hover {
   background-color: gold;
   color: black;
   padding: 10px 20px;
   border-radius: 5px;
-  transform: translateX(5px); /* Small animation on hover */
+  transform: translateX(5px); 
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -333,7 +333,18 @@ html {
     align-items: center;
     text-align: center;
   }
-
+  .hero {
+  height: 100vh;
+  background: url('background.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+  object-fit: contain;
+}
   .about-content {
     max-width: 100%;
     padding-top: 20px;

@@ -15,7 +15,6 @@ const skills = [
   { name: "Java", percent: 78 },
   { name: "OOPS", percent: 68 },
   { name: "DSA", percent: 84 },
-  { name: "Algorithms", percent: 80 },
   { name: "OS", percent: 76 },
   { name: "DBMS", percent: 79 },
   { name: "Networks", percent: 73 },
@@ -32,7 +31,6 @@ let isLoading = false;
     navMenu.classList.toggle("active");
   });
 
-  // Auto-close menu when link is clicked
   document.querySelectorAll("#navMenu a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");

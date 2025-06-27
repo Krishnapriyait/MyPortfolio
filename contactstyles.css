@@ -67,9 +67,9 @@ header h3 {
 
 nav {
   position: fixed;
-  top: 50px; /* stays below header */
+  top: 50px; 
   right: -30%;
-  width: 15%;
+  width: 25%;
   height: 25vh;
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(12px);
@@ -115,14 +115,14 @@ nav ul li a {
   transition: background 0.3s, color 0.3s;
 }
 nav ul li a i {
-  margin-right: 8px; /* Space between icons and text */
+  margin-right: 8px;
 }
 nav ul li a:hover {
   background-color: gold;
   color: black;
   padding: 10px 20px;
   border-radius: 5px;
-  transform: translateX(5px); /* Small animation on hover */
+  transform: translateX(5px);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -263,7 +263,6 @@ footer {
   display: none;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
