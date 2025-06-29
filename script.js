@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth Scroll to About Section
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navMenu");
   const aboutLink = document.querySelector("a[href='#about']");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Typing Animation
   const roles = [
     "Web Developer",
     "Software Engineer",
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.toggle("active");
   });
 
-  // Auto-close menu when link is clicked
   document.querySelectorAll("#navMenu a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
@@ -55,5 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  type(); // start typing effect
+  type();
 });

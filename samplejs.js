@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Smooth Scroll to About Section
     document.querySelector("a[href='#about']").addEventListener("click", function (event) {
         event.preventDefault();
         document.getElementById("about").scrollIntoView({ behavior: "smooth" });
     });
 
-    // Typing Animation for Hero Section
     const roles = ["Software Engineer", "Web Developer", "AI Enthusiast", "Tech Innovator"];
     let roleIndex = 0;
     let charIndex = 0;
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Start Typing Animation
     setTimeout(typeEffect, 1000);
 });
 const roles = ["Web Developer", "Software Engineer","Frontend Developer",  "Tech Enthusiast", "Backend Developer", "Problem Solver"];

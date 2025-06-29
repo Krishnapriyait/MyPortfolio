@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   revealCards();
   animateButtons();
 
-  // Hamburger Mobile Menu Logic
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("nav-links");
   const navLinks = nav.querySelectorAll("a");

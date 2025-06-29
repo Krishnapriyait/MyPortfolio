@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navMenu.classList.toggle("active");
   });
 
-  // Auto-close menu when link is clicked
   document.querySelectorAll("#navMenu a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");

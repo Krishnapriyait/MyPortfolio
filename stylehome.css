@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Header */
 header {
     background: rgba(0, 0, 0, 0.8);
     padding: 15px 50px;
@@ -43,7 +42,6 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
-/* Hero Section */
 .hero {
     text-align: center;
     padding: 100px;
@@ -60,7 +58,6 @@ nav ul li a:hover {
     margin: 15px 0;
 }
 
-/* About Me Section */
 .about {
     padding: 100px 20px;
     text-align: center;
@@ -80,7 +77,6 @@ nav ul li a:hover {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Profile Picture */
 .profile-pic {
     width: 250px;
     border-radius: 50%;
@@ -92,12 +88,10 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Content Styling */
 .about-content {
     max-width: 600px;
 }
 
-/* Quote Styling */
 .quote {
     font-size: 1.2rem;
     font-style: italic;
@@ -105,7 +99,6 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-/* Hire Me Button */
 .hire-me {
     text-align: center;
     margin-top: 30px;
@@ -129,23 +122,22 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 #dynamic-role {
-    color: #ffcc00; /* Highlighted text color */
+    color: #ffcc00; 
     font-weight: bold;
     font-size: 1.5rem;
     border-right: 3px solid #ffcc00;
     animation: blinkCursor 0.8s infinite;
 }
 
-/* Blinking Cursor Animation */
+
 @keyframes blinkCursor {
     50% { border-color: transparent; }
 }
-/* Smooth Scroll Effect */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Fade In Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
