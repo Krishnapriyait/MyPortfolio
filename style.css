@@ -334,7 +334,7 @@ html {
     text-align: center;
   }
   .hero {
-  height: 100vh;
+  height: 150vh;
   background: url('background.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
